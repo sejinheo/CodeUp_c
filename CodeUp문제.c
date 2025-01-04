@@ -1,19 +1,29 @@
 #include <stdio.h>
-
-int f(int n) 
+ 
+ 
+int main()
 {
-    if (n <= 1)
-        return n;
-    return f(n - 1) + f(n - 2);
-}
-
-int main() 
-{
-    int n;
-    scanf("%d", &n);
     
-    int result = f(n);
-    printf("%d\n", result);
+    int num , a,b;
+    scanf("%d",&num);
     
+    a = num/10;
+    b = num%10; 
+    
+    num = (b*10 + a) *2;
+    if(num >=100)
+    {
+        num = num -100;
+    }
+    printf("%d\n",num);
+    if(num <=50)
+    {
+        printf("GOOD");
+    }
+    else
+    {
+        printf("OH MY GOD");
+    }
+ 
     return 0;
 }
