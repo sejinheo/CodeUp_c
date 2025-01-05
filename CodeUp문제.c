@@ -1,29 +1,14 @@
-#include <stdio.h>
- 
- 
+#include<stdio.h>
 int main()
 {
+    int n;
+    int a[1001];
+    scanf("%d",&n);
+    for(int i = 0;i<n;i++)
+        scanf("%d",&a[i]);
     
-    int num , a,b;
-    scanf("%d",&num);
+    for(int i = 1;i<=n;i++)
+    printf("%d ",a[n-i]);
     
-    a = num/10;
-    b = num%10; 
-    
-    num = (b*10 + a) *2;
-    if(num >=100)
-    {
-        num = num -100;
-    }
-    printf("%d\n",num);
-    if(num <=50)
-    {
-        printf("GOOD");
-    }
-    else
-    {
-        printf("OH MY GOD");
-    }
- 
     return 0;
 }
