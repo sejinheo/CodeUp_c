@@ -1,20 +1,12 @@
-#include <stdio.h>
-
-int f(int n, int r)
+#include<stdio.h>
+#define MAX 10
+int main()
 {
-    if (r == 0 || r == n) 
-        return 1;
- 
-    return f(n - 1, r - 1) + f(n - 1, r);
-}
-
-int main() 
-{
-    int n, r;
-    scanf("%d %d", &n, &r);
-
-    int nCr = f(n, r);
-    printf("%d\n", nCr);
-
-    return 0;
+    int k, arr[MAX];
+    for(int i=0;i<MAX;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    scanf("%d",&k);
+    printf("%d",arr[k-1]);
 }
