@@ -1,12 +1,22 @@
 #include<stdio.h>
-#define MAX 10
+#include<string.h>
 int main()
 {
-    int k, arr[MAX];
-    for(int i=0;i<MAX;i++)
+    char speaking[100];
+    char reverse[100];
+    
+    gets(speaking);
+    int len = strlen(speaking);
+    
+    for(int i = 0; i<len;i++)
     {
-        scanf("%d",&arr[i]);
+        reverse[i] = speaking[len-i-1];
+        
+        if(i==len-1)
+        {
+            reverse[len] = 0;
+        }
     }
-    scanf("%d",&k);
-    printf("%d",arr[k-1]);
+    printf("%s",&reverse);
+    return 0;
 }
