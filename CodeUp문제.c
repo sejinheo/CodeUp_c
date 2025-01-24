@@ -1,17 +1,15 @@
 #include<stdio.h>
+#define MAX 101
 int main()
 {
-    int n[6];
-    for(int i=0;i<=5;i++)
-    scanf("%d",&n[i]);
-    int a,b,c;
-    a = n[0] * n[1];
-    b = n[2] * n[3];
-    c = n[4] * n[5];
-    if(b<=a && c<=a)
-    printf("%d",a);
-    else if(a<=b&&c<=b)
-    printf("%d",b);
-    else 
-    printf("%d",c);
+    char str[MAX];
+    scanf("%s",str);
+    printf("%c",str[0]);
+    char check = ',';
+    for(int i = 1;i< MAX;i++)
+    {
+        if (str[i - 1] == check)
+        printf("%c",str[i]);
+    }
+    return 0;
 }
