@@ -1,13 +1,20 @@
 #include <stdio.h>
-float circle(int r)
+int s=1;
+
+int f(int n)
 {
-    float sum;
-    sum = 3.14*r*r;
-    return sum;
+    if(n==0) return ;
+    else
+    {
+        
+        f(n-1);
+        s=s*n;
+        return s;
+    }
 }
-main()
+int main()
 {
-    int r;
-    scanf("%d", &r);
-    printf("%.2f", circle(r));
+    int a;
+    scanf("%d",&a);
+    printf("%d",f(a));
 }
