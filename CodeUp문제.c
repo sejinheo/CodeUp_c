@@ -1,39 +1,35 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-	int n;
-	scanf("%d", &n);
-	int a = 1;
-	for (int i=0; i < n;)
-	{
-		for (int j = 0,tmp = a; j < n; j++)
-		{
-			printf("%d ",tmp);
-			
-			if (j == n - 1)
-			{
-				a = tmp + n;
-				i++;
-			}
-			tmp += 1;
-		}
-		if (i == n)
-			return 0;
-		printf("\n");
-		for (int j = 0, tmp = a; j < n; j++)
-		{
-			printf("%d ", tmp);
-		
-			if (j == n - 1)
-			{
-				a = tmp+n;
-				i++;
-			}
-			tmp -= 1;
-		}
-		
-		printf("\n");
-	}
+    int map[12][12];
+    int obstacle = 0;
+    for (int i = 1; i <= 11; i++)
+    {
+        for (int j = 1; j <= 10; j++)
+        {
+            scanf("%d", &map[i][j]);
+        }
+    }
+    for (int j = 1; j<=10; j++)
+    {
+        if (map[11][j] == 0)
+            continue;
 
-	return 0;
+        for (int i = 10; i >= 1; i--)
+        {
+            if (map[i][j] != 0)
+            {
+                obstacle = map[i][j];
+                break;
+            }
+        }
+        if (obstacle == 0)
+            printf("%d safe\n", j);
+        else if (obstacle > 0)
+            printf("%d crash\n", j);
+        else if (obstacle < 0)
+            printf("%d fall\n", j);
+        obstacle = 0;
+    }
+
 }
