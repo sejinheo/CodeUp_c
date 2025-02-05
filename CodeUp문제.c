@@ -1,16 +1,24 @@
 #include <stdio.h>
 
-int f(long long n)
+int SuperSum(int k, int n) 
 {
-    if (n == 0) 
-        return 0;
-    return (n % 10) + f(n / 10);
+    if (k == 0) {
+        return n;
+    } else {
+        int sum = 0;
+        for (int i = 1; i <= n; i++) 
+        {
+            sum += SuperSum(k - 1, i);
+        }
+        return sum;
+    }
 }
 
-int main() 
-{
-    long long n;
-    scanf("%lld", &n);
-    printf("%d\n", f(n)); 
+int main() {
+    int k, n;
+    while (scanf("%d %d", &k, &n) != EOF)
+    {
+        printf("%d\n", SuperSum(k, n));
+    }
     return 0;
 }
