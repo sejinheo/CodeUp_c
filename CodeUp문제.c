@@ -1,35 +1,29 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int PalindromeCheck(int num) 
+int f(int n) 
 {
-    int original = num, reversed = 0, digit;
-    while (num > 0) 
-    {
-        digit = num % 10;
-        reversed = reversed * 10 + digit;
-        num /= 10;
-    }
-    return original == reversed;
+	int num = 0;
+
+	while (n != 0) 
+	{ 
+		if (n % 10 == 1)
+		num++;
+		n /= 10;
+	}
+	return num; 
 }
 
-int main() 
+int main()
 {
-    int a, b;
-    scanf("%d %d", &a, &b);
-    
-    int maxPalindrome = 0;
+    int a,b;
+    int sum=0;
+    scanf("%d",&a);
+    scanf("%d",&b);
     for (int i = a; i <= b; i++) 
     {
-        for (int j = i; j <= b; j++) 
-        { 
-            int save = i * j;
-            if (PalindromeCheck(save) && save > maxPalindrome) 
-            {
-                maxPalindrome = save;
-            }
-        }
-    }
-    
-    printf("%d\n", maxPalindrome);
+		sum += f(i);
+	}
+	printf("%d", sum);
+
     return 0;
 }
