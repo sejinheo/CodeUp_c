@@ -1,29 +1,19 @@
 #include<stdio.h>
 int main()
 {
-    int t;
-    scanf("%d", &t);
-    int button[3] = {300,60,10};
-    int count[3] = { 0 };
-    if (t % 10 !=0)
-    {
-        printf("-1");
-        return 0;
-    }
+    int n;
+    int sum = 0;
+    int num = 1;
+    scanf("%d", &n);
 
-    for (int i = 0; i < 3; i++)
+    for (int i = 1;i <= n; i++)
     {
-        if (t >= button[i])
+        for (int j = 1; j<= n; j++)
         {
-            count[i] = t / button[i];
-            t = t % button[i];
+            if (i == 1 || j == 1 || i == n || j == n)
+                sum += num;
+            num++;
         }
     }
-    for (int i = 0; i < 3; i++)
-    {
-
-        printf("%d", count[i]);
-        if (i + 1 != 3)
-            printf(" ");
-    }
+    printf("%d", sum);
 }
